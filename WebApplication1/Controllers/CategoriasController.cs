@@ -11,9 +11,9 @@ namespace WebApplication1.Controllers
     {
         private static IList<Categoria> cat = new List<Categoria>()
         {
-            new Categoria() {CategoriaId = 1, Nome ="notebooks"},
-            new Categoria() {CategoriaId = 2, Nome = "monitores"},
-            new Categoria() {CategoriaId = 3, Nome=  "desktops"},
+            new Categoria() {CategoriaId = 1, Nome ="Notebooks"},
+            new Categoria() {CategoriaId = 2, Nome = "Monitores"},
+            new Categoria() {CategoriaId = 3, Nome=  "Desktops"}
         };
         // GET: Categorias
         public ActionResult Index()
