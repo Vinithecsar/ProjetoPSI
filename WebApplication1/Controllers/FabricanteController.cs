@@ -36,10 +36,10 @@ namespace WebApplication1.Controllers
         {
 
             //context.Fabricantes.Add(fabri);
-            //ontext.SaveChanges();
+            //context.SaveChanges();
 
-            fabri.FabricanteId = fab.Select(c => c.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
             fab.Add(fabri);
+            fabri.FabricanteId = fab.Select(f => f.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
             return RedirectToAction("Index");
         }
     }
