@@ -40,8 +40,8 @@ namespace WebApplication1.Controllers
             //context.Fabricantes.Add(fabri);
             //context.SaveChanges();
 
-            fabri.FabricanteId = fab.Select(f => f.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
             fab.Add(fabri);
+            fabri.FabricanteId = fab.Select(f => f.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
             return RedirectToAction("Index");
         }
         // GET: Fabricantes/Edit/5
@@ -124,15 +124,15 @@ namespace WebApplication1.Controllers
         // POST: Fabricantes/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Fabricante fabri)
+        public ActionResult Delete(long id)
         {
             //Fabricante fabricante = context.Fabricantes.Find(id);
             //context.Fabricantes.Remove(fabricante);
             //context.SaveChanges();
             
-            /*fabri.FabricanteId = fab.Select(f => f.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
-            fab.Remove(fabri);
-            return RedirectToAction("Index");*/
+            Fabricante fabricante = fab.Where(m => m.FabricanteId == id).First();
+            fab.Remove(fabricante);
+            return RedirectToAction("Index");
         }
     }
 }
