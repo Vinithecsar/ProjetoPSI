@@ -24,7 +24,8 @@ namespace WebApplication1.Controllers
         // GET: Fabricante
         public ActionResult Index()
         {
-            return View(fab); /*context.Fabricantes.OrderBy(c=> c.Nome)*/
+            return View(context.Fabricantes.OrderBy(c => c.Nome));
+            //return View(fab); /*context.Fabricantes.OrderBy(c=> c.Nome)*/
         }
         // GET: Create
         public ActionResult Create()
@@ -37,11 +38,11 @@ namespace WebApplication1.Controllers
         public ActionResult Create(Fabricante fabri)
         {
 
-            //context.Fabricantes.Add(fabri);
-            //context.SaveChanges();
+            context.Fabricantes.Add(fabri);
+            context.SaveChanges();
 
-            fab.Add(fabri);
-            fabri.FabricanteId = fab.Select(f => f.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
+            //fab.Add(fabri);
+            //fabri.FabricanteId = fab.Select(f => f.FabricanteId).Max() + 1; // type ;  1, 2, 3, 4
             return RedirectToAction("Index");
         }
         // GET: Fabricantes/Edit/5
