@@ -117,11 +117,11 @@
     <Content Include="Views\Categorias\Edit.cshtml" />
     <Content Include="Views\Categorias\Details.cshtml" />
     <Content Include="Views\Categorias\Delete.cshtml" />
-    <Content Include="Views\Fabricante\Index.cshtml" />
     <Content Include="Views\Fabricante\Edit.cshtml" />
     <Content Include="Views\Fabricante\Create.cshtml" />
     <Content Include="Views\Fabricante\Details.cshtml" />
     <Content Include="Views\Fabricante\Delete.cshtml" />
+    <Content Include="Views\Fabricante\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
