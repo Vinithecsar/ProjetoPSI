@@ -60,13 +60,14 @@ namespace WebApplication1.Controllers
             return View(fabricante);
         }*/
         // POST: Fabricantes/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Fabricante fabricante = fab.Where(m => m.FabricanteId == id).First();
+            Fabricante fabricante = context.Fabricantes.Find(id);
+            //Fabricante fabricante = fab.Where(m => m.FabricanteId == id).First();
             if (fabricante == null)
             {
                 return HttpNotFound();
@@ -75,7 +76,7 @@ namespace WebApplication1.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        /*c ActionResult Edit(Fabricante fabricante)
+        public ActionResult Edit(Fabricante fabricante)
         {
             if (ModelState.IsValid)
             {
@@ -84,13 +85,13 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index");
             }
             return View(fabricante);
-        }*/
-        public ActionResult Edit(Fabricante fa)
+        }
+        /*public ActionResult Edit(Fabricante fa)
         {
             fab.Remove(fab.Where(c => c.FabricanteId == fa.FabricanteId).First());
             fab.Add(fa);//colocar o novo id=1
             return RedirectToAction("Index");
-        }
+        }*/
 
         // GET: Fabricantes/Details/5
         public ActionResult Details(long? id)
