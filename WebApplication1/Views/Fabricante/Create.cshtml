@@ -19,19 +19,14 @@
                     @class = "control-label col-md-2"
                     })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Nome, new
-                        {
-                            htmlAttributes =
-                        new { @class = "form-control" }
-                        })
-                        @Html.ValidationMessageFor(model => model.Nome, "",
-                        new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Nome, new {htmlAttributes = new { @class = "form-control" }})
+                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
         </div>
         <div class="panel-footer panel-info">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-5 col-md-10">
                 <input type="submit" value="Adicionar Fabricante" class="btn btn-danger" />
                 @Html.ActionLink("Retornar para a listagem de FABRICANTES", "Index", null,
                 new { @class = "btn btn-warning" })
