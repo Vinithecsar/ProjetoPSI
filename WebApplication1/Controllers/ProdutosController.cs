@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 using WebApplication1.Models;
 using WebApplication1.Context;
 
@@ -15,34 +16,32 @@ namespace WebApplication1.Controllers
         // GET: Produtos
         public ActionResult Index()
         {
-            return View(context.Produtos.OrderBy(c => c.Nome));
-        }
-
-        // GET: Produtos/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
+            var produtos = context.Produtos.Include(c => c.Categoria).Include(f => f.Fabricante). OrderBy(n => n.Nome);
+            return View(produtos);
         }
 
         // GET: Produtos/Create
         public ActionResult Create()
         {
+            ViewBag.CategoriaId = new SelectList(context.Categorias.OrderBy(b => b.Nome), "CategoriaId", "Nome");
+            ViewBag.FabricanteId = new SelectList(context.Fabricantes.OrderBy(b => b.Nome), "FabricanteId", "Nome");
             return View();
         }
 
         // POST: Produtos/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Produto produto)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                context.Produtos.Add(produto);
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(produto);
             }
         }
 
@@ -66,6 +65,12 @@ namespace WebApplication1.Controllers
             {
                 return View();
             }
+        }
+
+        // GET: Produtos/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
         }
 
         // GET: Produtos/Delete/5
