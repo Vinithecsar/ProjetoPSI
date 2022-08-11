@@ -100,7 +100,8 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Fabricante fabricante = context.Fabricantes.Find(id);
+            Fabricante fabricante = context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
+            //Fabricante fabricante = context.Fabricantes.Find(id);
             //Fabricante fabricante = fab.Where(m => m.FabricanteId == id).First();
             if (fabricante == null)
             {
