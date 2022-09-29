@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using WebApplication1.Models;
+using Modelo.Tabelas;
+using Modelo.Cadastros;
 
 namespace WebApplication1.Context
 {
