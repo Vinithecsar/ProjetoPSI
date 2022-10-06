@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using WebApplication1.Models;
+using Modelo.Cadastros;
+using Modelo.Tabelas;
 using WebApplication1.Context;
 using System.Net;
 
