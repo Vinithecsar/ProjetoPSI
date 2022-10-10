@@ -10,7 +10,7 @@ namespace Persistência.DAL.Tabelas
     class CategoriaDAL
     {
         private EFContext context = new EFContext();
-        public IQueryable<Categoria> ObterCategoriasClassificasPorNome()
+        public IQueryable<Categoria> ObterCategoriasClassificadasPorNome()
         {
             return context.Categorias.OrderBy(b => b.Nome);
         }

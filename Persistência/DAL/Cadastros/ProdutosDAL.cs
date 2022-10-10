@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Persistencia.Contexts;
 using System.Data.Entity;
 using Modelo.Cadastros;
+using Modelo.Tabelas;
 using System.Linq;
 
 namespace Persistência.DAL.Cadastros
