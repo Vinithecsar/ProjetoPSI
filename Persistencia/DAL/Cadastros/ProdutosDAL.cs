@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Persistencia.DAL.Cadastros
 {
-    class ProdutosDAL
+    public class ProdutosDAL
     {
         private EFContext context = new EFContext();
         public IQueryable<Produto> ObterProdutosClassificadosPorNome()

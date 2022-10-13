@@ -5,12 +5,12 @@ using Persistencia.Contexts;
 using Modelo.Tabelas;
 using System.Linq;
 
-namespace Persistência.DAL.Tabelas
+namespace Persistencia.DAL.Tabelas
 {
-    class CategoriaDAL
+    public class CategoriaDAL
     {
         private EFContext context = new EFContext();
-        public IQueryable<Categoria> ObterCategoriasClassificasPorNome()
+        public IQueryable<Categoria> ObterCategoriasClassificadasPorNome()
         {
             return context.Categorias.OrderBy(b => b.Nome);
         }
