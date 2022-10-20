@@ -11,7 +11,7 @@ using Servico.Cadastros;
 
 namespace WebApplication1.Controllers
 {
-    public class FabricantesController : Controller
+    public class FabricanteController : Controller
     {
         private FabricanteServico fabricanteServico = new FabricanteServico();
         private ActionResult ObterVisaoFabricantePorId(long? id)
