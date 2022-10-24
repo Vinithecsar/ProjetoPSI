@@ -17,7 +17,7 @@ namespace Persistencia.DAL.Cadastros
         }
         public Fabricante ObterFabricantePorId(long id)
         {
-            return context.Fabricantes.Where(f => f.FabricanteId == id).First();
+            return context.Fabricantes.Where(f => f.FabricanteId == id).Include("Produtos.Categoria").First();
         }
         public void GravarFabricante(Fabricante fabricante)
         {
