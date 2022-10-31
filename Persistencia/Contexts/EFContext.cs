@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Modelo.Cadastros;
 using Modelo.Tabelas;
+using Persistencia.Migrations;
 
 namespace Persistencia.Contexts
 {
@@ -14,8 +15,7 @@ namespace Persistencia.Contexts
     {
         public EFContext() : base("Asp_Net_MVC_CS")
         {
-            Database.SetInitializer<EFContext>(
-            new DropCreateDatabaseIfModelChanges<EFContext>());
+            Database.SetInitializer<EFContext>(new MigrateDatabaseToLatestVersion<EFContext,Configuration>());
         }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Fabricante> Fabricantes { get; set; }
