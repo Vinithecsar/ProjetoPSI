@@ -25,7 +25,7 @@
                     <li id="liHome" role="presentation" class="active"><a href="#">Home</a></li>
                     <li id="liCategorias" role="presentation">@Html.ActionLink("Categorias", "Index", "Categorias")</li>
                     <li id="liFabricantes" role="presentation">@Html.ActionLink("Fabricantes", "Index", "Fabricante")</li>
-                    <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index","Produtos")</li>
+                    <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index", "Produtos")</li>
                 </ul>
             </div>
             <div class="col-xs-9 col-md-9">
@@ -41,6 +41,8 @@
     </div>
     <script src="@Url.Content("~/scripts/jquery-1.9.1.js")"></script>
     <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
     @RenderSection("ScriptPage", false);
 </body>
 </html>

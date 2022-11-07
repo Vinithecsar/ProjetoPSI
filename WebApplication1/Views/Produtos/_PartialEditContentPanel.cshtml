@@ -1,7 +1,12 @@
 ﻿@model Modelo.Cadastros.Produto
 <div class="form-horizontal">
-    @Html.ValidationSummary(true, "Verifique os seguintes erros",
-    new { @class = "text-danger" })
+    @if (ViewData.ModelState.Keys.Any(k => ViewData.ModelState[k].Errors.Count() > 0))
+    {
+        <div class="alert alert-danger alert-dismissable">
+            @Html.ValidationSummary(true, "Verifique os seguintes erros",
+            new { @class = "text-danger" })
+        </div>
+    }
     <div class="form-group">
         @Html.LabelFor(model => model.Nome, htmlAttributes:
         new { @class = "control-label col-md-3" })
