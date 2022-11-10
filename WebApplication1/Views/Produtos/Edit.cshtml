@@ -11,11 +11,15 @@
             Alteração dos dados de um PRODUTO
         </div>
         <div class="panel-body">
+            @Html.HiddenFor(model => model.ProdutoId)
             @Html.Partial("~/Views/Produtos/_PartialEditContentPanel.cshtml", Model)
-            <div class="form-group">
+            <div class="panel-footer panel-info">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Gravar alterações" class="btn btn-default" />
+                    <input type="submit" value="Gravar alterações" class="btn btn-danger" />
+                    @Html.ActionLink("Retornar para a listagem de PRODUTOS", "Index", null, new { @class = "btn btn-warning" })
                 </div>
+                <br />
+                <br />
             </div>
         </div>
 
