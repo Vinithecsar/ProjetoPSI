@@ -21,10 +21,18 @@ namespace WebApplication1.Controllers
         {
             Produto produto = produtoServico.ObterProdutoPorId(id);
             FileStream fileStream = new FileStream(Server.MapPath("~/App_Data/" + produto.NomeArquivo), FileMode.Create, FileAccess.Write);
-            fileStream.Write(produto.Logotipo, 0,
-            Convert.ToInt32(produto.TamanhoArquivo));
+            fileStream.Write(produto.Logotipo, 0, Convert.ToInt32(produto.TamanhoArquivo));
             fileStream.Close();
             return File(fileStream.Name, produto.LogotipoMimeType, produto.NomeArquivo);
+        }
+        public ActionResult DownloadArquivo2(long id)
+        {
+
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+            FileStream fileStream = new FileStream(Server.MapPath("~/App_Data/" +
+            produto.NomeArquivo), FileMode.Open, FileAccess.Read);
+            return File(fileStream.Name, produto.LogotipoMimeType, produto.NomeArquivo);
+
         }
         public FileContentResult GetLogotipo(long id)
         {
@@ -32,6 +40,21 @@ namespace WebApplication1.Controllers
             if (produto != null)
             {
                 return File(produto.Logotipo, produto.LogotipoMimeType);
+            }
+            return null;
+        }
+        public FileContentResult GetLogotipo2(long id)
+        {
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+            if (produto != null)
+            {
+                if (produto.NomeArquivo != null)
+                {
+                    var bytesLogotipo = new byte[produto.TamanhoArquivo];
+                    FileStream fileStream = new FileStream(Server.MapPath("~/App_Data/" + produto.NomeArquivo), FileMode.Open,FileAccess.Read);
+                    fileStream.Read(bytesLogotipo, 0, (int)produto.TamanhoArquivo);
+                    return File(bytesLogotipo, produto.LogotipoMimeType);
+                }
             }
             return null;
         }
@@ -57,6 +80,9 @@ namespace WebApplication1.Controllers
                         produto.Logotipo = SetLogotipo(logotipo);
                         produto.NomeArquivo = logotipo.FileName;
                         produto.TamanhoArquivo = logotipo.ContentLength;
+
+                        string strFileName = Server.MapPath("~/App_Data/") + Path.GetFileName(logotipo.FileName);
+                        logotipo.SaveAs(strFileName);
                     }
                     produtoServico.GravarProduto(produto);
                     return RedirectToAction("Index");
