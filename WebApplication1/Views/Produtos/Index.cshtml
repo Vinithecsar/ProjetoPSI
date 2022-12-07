@@ -26,30 +26,36 @@
                     </th>
                     <th>Categoria</th>
                     <th>Fabricante</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Destaque)
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProdutoId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nome)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Categoria.Nome)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Fabricante.Nome)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Alterar", "Edit", new { id = item.ProdutoId }) |
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoId }) |
-                            @Html.ActionLink("Eliminar", "Delete", new { id = item.ProdutoId })
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProdutoId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fabricante.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destaque)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Alterar", "Edit", new { id = item.ProdutoId }) |
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoId }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.ProdutoId })
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>

@@ -29,5 +29,6 @@ namespace Modelo.Cadastros
         public byte[] Logotipo { get; set; }
         public string NomeArquivo { get; set; }
         public long TamanhoArquivo { get; set; }
+        public bool Destaque { get; set; }
     }
 }
