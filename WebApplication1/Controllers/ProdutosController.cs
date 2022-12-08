@@ -29,8 +29,7 @@ namespace WebApplication1.Controllers
         {
 
             Produto produto = produtoServico.ObterProdutoPorId(id);
-            FileStream fileStream = new FileStream(Server.MapPath("~/App_Data/" +
-            produto.NomeArquivo), FileMode.Open, FileAccess.Read);
+            FileStream fileStream = new FileStream(Server.MapPath("~/App_Data/" + produto.NomeArquivo), FileMode.Open, FileAccess.Read);
             return File(fileStream.Name, produto.LogotipoMimeType, produto.NomeArquivo);
 
         }

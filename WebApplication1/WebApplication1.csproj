@@ -230,6 +230,8 @@
     <Content Include="Views\Categorias\_PartialDetailsContentPanel.cshtml" />
     <Content Include="Views\Fabricante\_PartialDetailsContentPanel.cshtml" />
     <Content Include="Views\Produtos\_PartialEditContentPanel.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,7 +241,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
