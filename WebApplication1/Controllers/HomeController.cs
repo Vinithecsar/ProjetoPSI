@@ -16,8 +16,6 @@ namespace WebApplication1.Controllers
     public class HomeController : Controller
     {
         private ProdutoServico produtoServico = new ProdutoServico();
-        private CategoriaServico categoriaServico = new CategoriaServico();
-        private FabricanteServico fabricanteServico = new FabricanteServico();
         // GET: Home
         public ActionResult Index()
         {
