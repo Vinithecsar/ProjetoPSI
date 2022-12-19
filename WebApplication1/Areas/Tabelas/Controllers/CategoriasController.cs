@@ -9,7 +9,7 @@ using Persistencia.Contexts;
 using Modelo.Tabelas;
 using Servico.Tabelas;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Areas.Tabelas.Controllers
 {
     public class CategoriasController : Controller
     {

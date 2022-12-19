@@ -12,7 +12,7 @@ using Servico.Tabelas;
 using System.Net;
 using System.IO;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Areas.Cadastros.Controllers
 {
     public class ProdutosController : Controller
     {

@@ -9,7 +9,7 @@ using Modelo.Cadastros;
 using Modelo.Tabelas;
 using Servico.Cadastros;
 
-namespace WebApplication1.Controllers
+namespace WebApplication1.Areas.Cadastros.Controllers
 {
     public class FabricanteController : Controller
     {
