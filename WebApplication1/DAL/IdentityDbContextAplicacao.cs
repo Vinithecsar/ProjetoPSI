@@ -19,8 +19,7 @@ namespace WebApplication1.DAL
         {
             return new IdentityDbContextAplicacao();
         }
-
-        public System.Data.Entity.DbSet<WebApplication1.Areas.Seguranca.Models.Usuario> Usuarios { get; set; }
+        //public System.Data.Entity.DbSet<WebApplication1.Areas.Seguranca.Models.Usuario> Usuarios { get; set; }
     }
     public class IdentityDbInit : DropCreateDatabaseIfModelChanges<IdentityDbContextAplicacao> {}
 }
