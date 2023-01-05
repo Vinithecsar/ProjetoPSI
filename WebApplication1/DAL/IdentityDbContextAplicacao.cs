@@ -10,7 +10,7 @@ namespace WebApplication1.DAL
 {
     public class IdentityDbContextAplicacao : IdentityDbContext<Usuario>
     {
-        public IdentityDbContextAplicacao() : base("IdentityDB") {}
+        public IdentityDbContextAplicacao() : base("IdentityDb") {}
         static IdentityDbContextAplicacao()
         {
             Database.SetInitializer<IdentityDbContextAplicacao>(new IdentityDbInit());
