@@ -25,7 +25,7 @@
                         if (Html.GetAuthenticatedUser().ToString() != "")
                         {
                             @Html.GetAuthenticatedUser();
-                            @Html.ActionLink(" - Sair", "Logout", "Account")
+                            @Html.ActionLink(" - Sair", "Logout", "Account", new { area = "Seguranca" }, null)
                         }
                         else
                         {
