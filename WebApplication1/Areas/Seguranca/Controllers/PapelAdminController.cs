@@ -104,5 +104,27 @@ namespace WebApplication1.Areas.Seguranca.Controllers
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
+        [HttpPost]
+        public ActionResult Delete(Papel papel)
+        {
+            Papel role = RoleManager.FindById(papel.Id);
+            if (role != null)
+            {
+                IdentityResult result = RoleManager.Delete(role);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return new HttpStatusCodeResult(
+                    HttpStatusCode.BadRequest);
+                }
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
     }
 }
